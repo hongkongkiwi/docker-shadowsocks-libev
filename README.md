@@ -38,7 +38,7 @@ hongkongkiwi/shadowsocks-libev
 
 ### Testing the client
 ```
-curl --socks5-hostname 127.0.0.1:1080 "http://www.google.com"
+curl --socks5-hostname YOUR_SERVER_IP:1080 "http://www.google.com"
 ```
 
 ## Parameters
