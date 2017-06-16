@@ -14,6 +14,8 @@ ARG SS_REPO="shadowsocks/shadowsocks-libev"
 ARG SS_IPSET_REPO="shadowsocks/ipset"
 ARG SS_LIBCORK_REPO="shadowsocks/libcork"
 ARG SS_LIBBLOOM_REPO="shadowsocks/libbloom"
+ENV DNS_SERVER_ADDR1="8.8.8.8"
+ENV DNS_SERVER_ADDR2="8.8.4.4"
 
 RUN set -ex \
     && apk add --no-cache bash \

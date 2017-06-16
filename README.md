@@ -20,6 +20,7 @@ For a full list of feature comparison between different versions of shadowsocks,
 ```
 docker create \
 --name="shadowsocks-libev-server" \
+--device="/dev/urandom" \
 -v <path to server config file>:/config/ss_config.json \
 -e SS_MODE="server" \
 -p 8080:8080 \
@@ -30,6 +31,7 @@ hongkongkiwi/shadowsocks-libev
 ```
 docker create \
 --name="shadowsocks-libev-client" \
+--device="/dev/urandom" \
 -v <path to client config file>:/config/ss_config.json \
 -e SS_MODE="client" \
 -p 1080:1080 \
