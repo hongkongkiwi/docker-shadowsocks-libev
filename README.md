@@ -1,5 +1,8 @@
 # hongkongkiwi/docker-shadowsocks-client
-[![](https://images.microbadger.com/badges/version/hongkongkiwi/docker-shadowsocks-libev-client.svg)](https://microbadger.com/images/hongkongkiwi/docker-shadowsocks-libev-client "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/hongkongkiwi/docker-shadowsocks-libev-client.svg)](http://microbadger.com/images/hongkongkiwi/shadowsocks-libev-client "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/hongkongkiwi/docker-shadowsocks-libev-client.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/hongkongkiwi/docker-shadowsocks-libev-client.svg)][hub]
+[![](https://images.microbadger.com/badges/version/hongkongkiwi/docker-shadowsocks-libev-client.svg)]
+[![](https://images.microbadger.com/badges/image/hongkongkiwi/docker-shadowsocks-libev-client.svg)]
+[![Docker Pulls](https://img.shields.io/docker/pulls/hongkongkiwi/docker-shadowsocks-libev-client.svg)]
+[![Docker Stars](https://img.shields.io/docker/stars/hongkongkiwi/docker-shadowsocks-libev-client.svg)]
 
 Shadowsocks-libev is a lightweight secured SOCKS5 proxy for embedded devices and low-end boxes.
 
@@ -9,7 +12,7 @@ Shadowsocks-libev is written in pure C and depends on libev. It's designed to be
 
 For a full list of feature comparison between different versions of shadowsocks, refer to the Wiki page.
 
-[![shadowsocks-libev logo](https://gaukas.wang/wp-content/uploads/2015/11/Shadowsocks.png)](https://github.com/shadowsocks/shadowsocks-libev)]
+[![shadowsocks-libev logo](https://gaukas.wang/wp-content/uploads/2015/11/Shadowsocks.png)](https://github.com/shadowsocks/shadowsocks-libev)
 
 ## Usage
 
@@ -27,12 +30,12 @@ hongkongkiwi/shadowsocks-libev-client
 
 `The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side.
 For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
-So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
-http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
+So -p 1080:1090 would expose port 1080 from inside the container to be accessible from the host's IP on port 1090
+http://192.168.x.x:1090 would show you what's running INSIDE the container on port 1080.`
 
 
-* `-p 8123` - the port(s)
-* `-v /config` - location of configuration files
+* `-p 1080` - the port(s)
+* `-v /config/ss_config.json` - location of configuration file
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 * `-e TZ` for setting timezone information, eg Europe/London
