@@ -1,4 +1,4 @@
-#
+  #
 # Dockerfile for shadowsocks-libev-client
 #
 FROM gliderlabs/alpine:3.4
@@ -8,10 +8,10 @@ MAINTAINER Andy Savage <andy@savage.hk>
 ARG SS_VER="latest"
 
 # Repo Info
-ENV SS_REPO "shadowsocks/shadowsocks-libev"
-ENV SS_IPSET_REPO "shadowsocks/ipset"
-ENV SS_LIBCORK_REPO "shadowsocks/libcork"
-ENV SS_LIBBLOOM_REPO "shadowsocks/libbloom"
+ARG SS_REPO="shadowsocks/shadowsocks-libev"
+ARG SS_IPSET_REPO="shadowsocks/ipset"
+ARG SS_LIBCORK_REPO="shadowsocks/libcork"
+ARG SS_LIBBLOOM_REPO="shadowsocks/libbloom"
 
 EXPOSE 1080/tcp
 EXPOSE 1080/udp
@@ -19,8 +19,6 @@ EXPOSE 1080/udp
 # Location of config file - Keep to default unless you need to change
 ENV CONFIG_FILE "/config/ss_config.json"
 ENV VERBOSE_LOGGING "yes"
-
-VOLUME ["/config"]
 
 RUN set -ex \
     && apk add --no-cache bash \
@@ -70,5 +68,9 @@ RUN apk del TMP \
 COPY root/ /
 
 RUN chmod +x /run.sh
+
+WORKDIR /
+
+VOLUME ["/config"]
 
 CMD ["/bin/bash","/run.sh"]
