@@ -38,6 +38,7 @@ ENV OBFS_PORT "8443"
 ENV OBFS_TYPE "tls"
 # If OBFS is enabled traffic looks like it is destined for this host
 ENV OBFS_HOST "www.bing.com"
+ENV OBFS_CONFIG_FILE ""
 # This is required if we are running as a server - We don't always know our own IP
 # if this is not set, we will take our best guess
 ENV QR_SERVER_ADDR ""

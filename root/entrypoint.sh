@@ -85,17 +85,26 @@ fi
 
 command -v "$SS_BIN" >/dev/null 2>&1 || { echo >&2 "I require $SS_BIN but it's not installed.  Aborting."; exit 1; }
 
+if [ -f "$OBFS_CONFIG_FILE" ]; then
+  OBFS_CONFIG_FILE="-c $OBFS_CONFIG_FILE"
+elif [ "$OBFS_CONFIG_FILE" == "" ]; then
+  ENABLE_OBFS="no"
+else
+  echo "OBFS Config file does not exist!"
+  ENABLE_OBFS="no"
+fi
+
 SS_OBFS_OPTS=""
 # Info here for obfs https://hub.docker.com/r/liaohuqiu/simple-obfs/
 if [ "$ADD_OBFS_SUPPORT" == "yes" ] && [ "$ENABLE_OBFS" == "yes" ]; then
   command -v "obfs-$SS_MODE" >/dev/null 2>&1 || { echo >&2 "I require obfs-$SS_MODE but it's not installed.  Aborting."; exit 1; }
   SS_SERVER_PORT=`cat "$CONFIG_FILE" | jq .server_port | sed -e 's/^"//' -e 's/"$//'`
   if [ "$SS_MODE" == "server" ]; then
-    exec "obfs-server" -p $OBFS_PORT --obfs "$OBFS_TYPE" -r "$SYSTEM_LOCALHOST:$SS_SERVER_PORT"
+    "obfs-server" -p $OBFS_PORT --obfs "$OBFS_TYPE" -r "$SYSTEM_LOCALHOST:$SS_SERVER_PORT" "$VERBOSE" &
     SS_OBFS_OPTS="-s $SYSTEM_LOCALHOST"
   elif [ "$SS_MODE" == "local" ]; then
     SS_SERVER_ADDR=`cat "$CONFIG_FILE" | jq .server | sed -e 's/^"//' -e 's/"$//'`
-    exec "obfs-local" -s "$SS_SERVER_ADDR" -p "$SS_SERVER_PORT" --obfs "$OBFS_TYPE" -l $OBFS_PORT --obfs-host "$OBFS_HOST"
+    "obfs-local" -s "$SS_SERVER_ADDR" -p "$SS_SERVER_PORT" --obfs "$OBFS_TYPE" -l $OBFS_PORT --obfs-host "$OBFS_HOST" "$VERBOSE" &
     SS_OBFS_OPTS="-l $SYSTEM_LOCALHOST"
   else
     echo "We want obfs support but are running unknown mode $SS_MODE. Ignoring!"
