@@ -68,7 +68,7 @@ EXPOSE 8080/udp
 
 # Location of config file - Keep to default unless you need to change
 ENV CONFIG_FILE "/config/ss_config.json"
-ENV VERBOSE_LOGGING "yes"
+ENV VERBOSE_LOGGING "no"
 ENV SS_MODE "local"
 
 # Copy files to container
