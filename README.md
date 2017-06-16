@@ -1,8 +1,8 @@
 # hongkongkiwi/docker-shadowsocks-client
-[![](https://images.microbadger.com/badges/version/hongkongkiwi/docker-shadowsocks-libev-client.svg)]
-[![](https://images.microbadger.com/badges/image/hongkongkiwi/docker-shadowsocks-libev-client.svg)]
-[![Docker Pulls](https://img.shields.io/docker/pulls/hongkongkiwi/docker-shadowsocks-libev-client.svg)]
-[![Docker Stars](https://img.shields.io/docker/stars/hongkongkiwi/docker-shadowsocks-libev-client.svg)]
+![](https://images.microbadger.com/badges/version/hongkongkiwi/docker-shadowsocks-libev-client.svg)
+![](https://images.microbadger.com/badges/image/hongkongkiwi/docker-shadowsocks-libev-client.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/hongkongkiwi/shadowsocks-libev-client.svg)
+![Docker Stars](https://img.shields.io/docker/stars/hongkongkiwi/shadowsocks-libev-client.svg)
 
 Shadowsocks-libev is a lightweight secured SOCKS5 proxy for embedded devices and low-end boxes.
 
