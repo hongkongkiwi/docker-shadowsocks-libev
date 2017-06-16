@@ -1,6 +1,6 @@
 # hongkongkiwi/docker-shadowsocks-client
-![](https://images.microbadger.com/badges/version/hongkongkiwi/docker-shadowsocks-libev-client.svg)
-![](https://images.microbadger.com/badges/image/hongkongkiwi/docker-shadowsocks-libev-client.svg)
+![](https://images.microbadger.com/badges/version/hongkongkiwi/shadowsocks-libev-client.svg)
+![](https://images.microbadger.com/badges/image/hongkongkiwi/shadowsocks-libev-client.svg)
 ![Docker Pulls](https://img.shields.io/docker/pulls/hongkongkiwi/shadowsocks-libev-client.svg)
 ![Docker Stars](https://img.shields.io/docker/stars/hongkongkiwi/shadowsocks-libev-client.svg)
 
