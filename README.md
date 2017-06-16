@@ -1,5 +1,5 @@
 # hongkongkiwi/docker-shadowsocks-client
-[![](https://images.microbadger.com/badges/version/hongkongkiwi/docker-shadowsocks-client.svg)](https://microbadger.com/images/lsiocommunity/polipo "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/hongkongkiwi/docker-shadowsocks-client.svg)](http://microbadger.com/images/lsiocommunity/polipo "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/hongkongkiwi/docker-shadowsocks-client.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/hongkongkiwi/docker-shadowsocks-client.svg)][hub]
+[![](https://images.microbadger.com/badges/version/hongkongkiwi/docker-shadowsocks-libev-client.svg)](https://microbadger.com/images/hongkongkiwi/docker-shadowsocks-libev-client "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/hongkongkiwi/docker-shadowsocks-libev-client.svg)](http://microbadger.com/images/hongkongkiwi/shadowsocks-libev-client "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/hongkongkiwi/docker-shadowsocks-libev-client.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/hongkongkiwi/docker-shadowsocks-libev-client.svg)][hub]
 
 Shadowsocks-libev is a lightweight secured SOCKS5 proxy for embedded devices and low-end boxes.
 
@@ -9,7 +9,7 @@ Shadowsocks-libev is written in pure C and depends on libev. It's designed to be
 
 For a full list of feature comparison between different versions of shadowsocks, refer to the Wiki page.
 
-[![shadowsocks-libev](https://gaukas.wang/wp-content/uploads/2015/11/Shadowsocks.png)][appurl]
+[![shadowsocks-libev logo](https://gaukas.wang/wp-content/uploads/2015/11/Shadowsocks.png)](https://github.com/shadowsocks/shadowsocks-libev)]
 
 ## Usage
 
