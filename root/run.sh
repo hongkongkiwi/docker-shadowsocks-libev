@@ -3,6 +3,8 @@
 SS_LOCAL="/usr/local/bin/ss-local"
 MD5SUM="/usr/bin/md5sum"
 
+DEFAULT_CONFIG="/usr/local/share/ss_config.json.default"
+
 command -v "$SS_LOCAL" >/dev/null 2>&1 || { echo >&2 "I require ss-local but it's not installed.  Aborting."; exit 1; }
 command -v "$MD5SUM" >/dev/null 2>&1 || { echo >&2 "I require md5sum but it's not installed.  Aborting."; exit 1; }
 
