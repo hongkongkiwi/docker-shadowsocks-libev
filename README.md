@@ -54,7 +54,7 @@ http://192.168.x.x:1090 would show you what's running INSIDE the container on po
 * `-e SS_MODE` for setting whether we are running as a server or client. Set to either "server" or "client"
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
-* `-e TZ` for setting timezone information, eg Europe/London
+* `-e TZ` for setting timezone information, eg Asia/Hong_Kong
 
 It is based on a minimal alpine linux build, for shell access whilst the container is running do `docker exec -it "shadowsocks-libev-client" /bin/bash` or `docker exec -it "shadowsocks-libev-server" /bin/bash`.
 
