@@ -1,5 +1,5 @@
 #
-# Dockerfile for shadowsocks-libev
+# Dockerfile for shadowsocks-libev-client
 #
 FROM gliderlabs/alpine:3.4
 MAINTAINER Andy Savage <andy@savage.hk>
