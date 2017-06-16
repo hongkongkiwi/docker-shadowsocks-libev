@@ -26,4 +26,8 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
 
 fi
 
-exec "$SS_BIN" -c "$CONFIG_FILE" "$VERBOSE" -d "$DNS_SERVER_ADDR1" -d "$DNS_SERVER_ADDR2" "$@"
+if [ $SS_MODE == "server" ]; then
+  exec "$SS_BIN" -c "$CONFIG_FILE" "$VERBOSE" -d "$DNS_SERVER_ADDR1" -d "$DNS_SERVER_ADDR2" "$@"
+else
+  exec "$SS_BIN" -c "$CONFIG_FILE" "$VERBOSE" "$@"
+fi
