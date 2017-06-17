@@ -36,8 +36,27 @@ else
 fi
 
 if [ ! -f "$CONFIG_FILE" ]; then
-  echo "No config file found at $CONFIG_FILE.  Aborting."
-  exit 1
+  echo "No config file found at $CONFIG_FILE.  Generating one..."
+  command -v "pwgen" >/dev/null 2>&1 || { echo >&2 "I require pwgen but it's not installed.  Aborting."; exit 1; }
+  RANDOM_PASSWORD=`pwgen 32 1`
+  cat > "$CONFIG_FILE" <<EOF
+  {
+      "server": "0.0.0.0",
+      "server_port": 8080,
+      "local_address": "0.0.0.0",
+      "local_port":1080,
+      "password": "${RANDOM_PASSWORD}",
+      "timeout": 300,
+      "method": "rc4-md5",
+      "fast_open": false
+  }
+EOF
+else
+  command -v "jq" >/dev/null 2>&1 || { echo >&2 "I require jq but it's not installed.  Aborting."; exit 1; }
+  TEST_JSON=`jq -e '.' "$CONFIG_FILE" 2>/dev/null 1>/dev/null && echo "pass" || echo "fail"`
+  if [ "$TEST_JSON" == "fail" ]; then
+    echo 'Invalid JSON config file! Aborting!';
+  fi
 fi
 
 # Output the QRCode file

@@ -58,6 +58,7 @@ RUN set -ex \
                     pcre \
                     udns \
                     jq \
+                    pwgen \
   && apk add --no-cache \
       --virtual TMP autoconf \
                    automake \
